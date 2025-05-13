@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="roadmap-wrapper">
+  <h2 class="text-center text-light mb-5">📈 Roadmap to Become a Trader</h2>
+  <div class="roadmap-container" id="roadmap">
+    <div class="roadmap-grid">
+
+      <!-- Milestone 1 -->
+      <div class="milestone completed" data-title="Getting Oriented: Trading Fundamentals">
+        <a href="{% url 'milestone1' %}">
+            <img src="{% static 'images/1.1.jpeg' %}" alt="Milestone 1" class="milestone-image">
+          </a>
+        <div class="milestone-title">1. Getting Oriented</div>
+        <div class="tooltip">
+          What is Trading? Assets, leverage, spreads<br>
+          Markets: Stocks, Forex, Crypto<br>
+          <strong>Fundamental Analysis</strong>: GDP, interest rates, company data
+        </div>
+        <input type="checkbox" class="milestone-checkbox" id="milestone1">
+      </div>
+
+      <!-- Milestone 2 -->
+      <div class="milestone completed" data-title="Technical Foundations">
+        <a href="{% url 'milestone2' %}">
+            <img src="{% static 'images/2.1.jpeg' %}" alt="Milestone 2" class="milestone-image">
+          </a>
+        <div class="milestone-title">2. Technical Foundations</div>
+        <div class="tooltip">
+          <strong>Technical Analysis</strong>: Chart types, timeframes<br>
+          <strong>Support & Resistance</strong>, <strong>Trendlines</strong><br>
+          <strong>Market Trends</strong>: Bull/Bear, Volume Analysis
+        </div>
+        <input type="checkbox" class="milestone-checkbox" id="milestone2">
+      </div>
+
+      <!-- Milestone 3 -->
+      <div class="milestone in-progress" data-title="Price Action & Indicators">
+        <a href="{% url 'milestone3' %}">
+            <img src="{% static 'images/3.2.jpeg' %}" alt="Milestone 3" class="milestone-image">
+          </a>
+        <div class="milestone-title">3. Price Action & Indicators</div>
+        <div class="tooltip">
+          <strong>Price Action</strong>: Reading movement<br>
+          <strong>Candlestick Psychology</strong>: Emotions behind patterns<br>
+          <strong>Indicators</strong>: EMA, RSI, MACD, Bollinger Bands
+        </div>
+        <input type="checkbox" class="milestone-checkbox" id="milestone3">
+      </div>
+
+      <!-- Milestone 4 -->
+      <div class="milestone upcoming" data-title="Chart Patterns & Structure">
+        <a href="{% url 'milestone4' %}">
+            <img src="{% static 'images/4.2.jpeg' %}" alt="Milestone 4" class="milestone-image">
+          </a>
+        <div class="milestone-title">4. Patterns & Structure</div>
+        <div class="tooltip">
+          <strong>Reversal & Continuation Patterns</strong>: H&S, flags, triangles<br>
+          <strong>Breakout & Consolidation</strong><br>
+          <strong>HH/HL vs. LH/LL</strong>: Market Structure
+        </div>
+        <input type="checkbox" class="milestone-checkbox" id="milestone4">
+      </div>
+
+      <!-- Milestone 5 -->
+      <div class="milestone upcoming" data-title="Strategy Building">
+        <a href="{% url 'milestone5' %}">
+            <img src="{% static 'images/5.1.jpeg' %}" alt="Milestone 5" class="milestone-image">
+          </a>
+        <div class="milestone-title">5. Strategy Building</div>
+        <div class="tooltip">
+          Combine: <strong>Fundamental + Technical + Price Action</strong><br>
+          Entry/Exit rules, timeframes<br>
+          <strong>Risk Management</strong> & Trade Journaling
+        </div>
+        <input type="checkbox" class="milestone-checkbox" id="milestone5">
+      </div>
+
+      <!-- Milestone 6 -->
+      <div class="milestone upcoming" data-title="Psychology & Discipline">
+        <a href="{% url 'milestone6' %}">
+            <img src="{% static 'images/6.1.jpeg' %}" alt="Milestone 6" class="milestone-image">
+          </a>
+        <div class="milestone-title">6. Psychology & Discipline</div>
+        <div class="tooltip">
+          <strong>Mindset</strong>: Control greed, fear, FOMO<br>
+          Emotional awareness & journaling<br>
+          Develop a consistent routine
+        </div>
+        <input type="checkbox" class="milestone-checkbox" id="milestone6">
+      </div>
+
+      <!-- Milestone 7 -->
+      <div class="milestone upcoming" data-title="Advanced Tools & Automation">
+        <a href="{% url 'milestone7' %}">
+            <img src="{% static 'images/7.2.jpeg' %}" alt="Milestone 7" class="milestone-image">
+          </a>
+          <div class="milestone-title">7. Advance Topics & Tools</div>
+          <div class="tooltip">
+            <strong>Mindset</strong>: Control greed, fear, FOMO<br>
+            Emotional awareness & journaling<br>
+            Develop a consistent routine
+          </div>
+          <input type="checkbox" class="milestone-checkbox" id="milestone6">
+        </div>
+
+      <!-- Milestone 8 -->
+      <div class="milestone upcoming" data-title="Going Live & Scaling">
+        <a href="{% url 'milestone8' %}">
+            <img src="{% static 'images/8.2.jpeg' %}" alt="Milestone 8" class="milestone-image">
+          </a>
+        <div class="milestone-title">8. Going Live</div>
+        <div class="tooltip">
+          Start with Small Capital → Scale Up<br>
+          Track Progress & Join Communities<br>
+          Continuous Learning: Books, webinars, mentorship
+        </div>
+        <input type="checkbox" class="milestone-checkbox" id="milestone8">
+      </div>
+
+    </div>
+    <div class="road-path"></div>
+  </div>
+
+  <div id="celebration" class="celebration-popup">
+    🎉 You’ve completed the roadmap! Ready to trade! 🏁
+  </div>
+</div>
+<!-- Back Button to Home Page -->
+<div style="position: absolute; top: 100px; left: 20px;">
+    <a href="{% url 'home' %}" class="btn btn-secondary">⬅ Back to Home</a>
+  </div>
+
+
+<style>
+.roadmap-wrapper {
+  background-color: #0f172a;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.roadmap-container {
+  position: relative;
+  max-width: 1200px;
+   margin-bottom: 2rem;
+  margin: 0 auto;
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.5rem 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.milestone {
+  background-color: transparent;
+  padding: 0.5rem;
+  padding-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.milestone-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #0ea5e9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.milestone-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #38bdf8;
+}
+
+.milestone-title {
+  font-size: 1rem;
+  color: #f8fafc;
+  margin-top: 10px;
+}
+
+.milestone-checkbox {
+    position: absolute;
+  bottom: 5px;
+  right: 20px;
+  transform: scale(1.6);
+  accent-color: #0ea5e9; /* makes it match your neon blue theme */
+  cursor: pointer;
+}
+
+.milestone.completed .milestone-image { box-shadow: 0 0 10px #22c55e; }
+.milestone.in-progress .milestone-image { box-shadow: 0 0 10px #facc15; }
+.milestone.upcoming .milestone-image { box-shadow: 0 0 10px #ef4444; }
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 0.6rem;
+  border-radius: 8px;
+  width: 190px;
+  z-index: 10;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.milestone:hover .tooltip {
+  display: block;
+}
+
+.road-path {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  width: 90%;
+  height: 6px;
+  background: #eeeeef;
+  z-index: -1;
+  border-radius: 3px;
+}
+
+.celebration-popup {
+  display: none;
+  background-color: #10b981;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  animation: popIn 0.6s ease;
+  margin-top: 2rem;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 12px #0dff00; }
+  50% { box-shadow: 0 0 24px #0dff00; }
+  100% { box-shadow: 0 0 12px #0dff00; }
+}
+
+.milestone-image:hover {
+  animation: glowPulse 1.5s infinite;
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .roadmap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+  .milestone-image {
+    width: 80px;
+    height: 80px;
+  }
+  .milestone-title {
+    font-size: 0.9rem;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = Array.from(document.querySelectorAll('.milestone-checkbox'));
+    const celebration = document.getElementById('celebration');
+  
+    // 1. Restore state from localStorage
+    checkboxes.forEach((cb, idx) => {
+      const saved = localStorage.getItem(`milestone-${idx}`);
+      if (saved === 'true') cb.checked = true;
+    });
+  
+    // 2. Add change listeners to save state and trigger celebration
+    checkboxes.forEach((checkbox, idx) => {
+      checkbox.addEventListener('change', () => {
+        // Save this checkbox's state
+        localStorage.setItem(`milestone-${idx}`, checkbox.checked);
+  
+        // If all are checked, show celebration
+        if (checkboxes.every(cb => cb.checked)) {
+          celebration.style.display = 'block';
+          setTimeout(() => { celebration.style.display = 'none'; }, 4000);
+        }
+      });
+    });
+  });
+  </script>
+  
+{% endblock %}

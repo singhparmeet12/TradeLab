@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="milestone-detail text-light px-5 py-4" style="max-width: 1000px; margin: auto;">
+  <h2 class="text-center mb-4">📊 Strategy Building</h2>
+
+  <p>Building a successful trading strategy involves combining your knowledge of fundamental analysis, technical analysis, and price action. A well-designed strategy will help you make informed decisions, manage risks effectively, and achieve consistent profits over time.</p>
+
+  <!-- Combining Fundamentals, Technicals, and Price Action -->
+  <h3 class="mt-5">🔍 Combining Fundamentals, Technicals, and Price Action</h3><br>
+  <p>To develop a robust strategy, it's essential to integrate all three core elements of trading:</p><br>
+
+  <div style="overflow: auto;">
+    <div style="float: right; margin-left: 20px; max-width: 45%;">
+      <img src="{% static 'images/trading_20.jpg' %}" alt="Fundamentals, Technicals, Price Action" class="img-fluid rounded"><br><br>
+    </div>
+    <p><strong>Fundamentals:</strong> <a href="https://www.investopedia.com/terms/f/fundamentalanalysis.asp" target="_blank">Fundamental analysis</a> helps you understand the larger economic factors that move markets, such as interest rates, earnings reports, GDP, and news. For example, if the Federal Reserve announces an interest rate hike, it can influence currency prices significantly.</p>
+
+    <p><strong>Technicals:</strong> <a href="https://www.investopedia.com/terms/t/technicalanalysis.asp" target="_blank">Technical analysis</a> involves studying charts and using indicators (like moving averages or RSI) to identify trends, support and resistance levels, and entry/exit signals. Understanding market structure, trends, and momentum is key to technical trading.</p>
+
+    <p><strong>Price Action:</strong> <a href="https://www.investopedia.com/terms/p/priceaction.asp" target="_blank">Price action</a> refers to reading the market through the movement of prices without relying on indicators. By analyzing candlestick patterns, support/resistance zones, and other price-based signals, traders can make better entry and exit decisions. Price action is often used in combination with technical indicators for confirmation.</p>
+    
+    <p>By combining these three elements, you can develop a strategy that accounts for both market fundamentals and the technical aspects of price movement. For example, if the fundamentals suggest a bullish market (e.g., strong earnings report), but technical analysis and price action indicate an ideal entry point (e.g., breakout above resistance), your strategy will have more conviction. Price action and technicals will guide your timing, while fundamentals provide the broader market context.</p>
+  </div>
+
+  <!-- Defining Your Setup: Entry/Exit Rules, Timeframes -->
+  <h3 class="mt-5">⏳ Defining Your Setup: Entry/Exit Rules, Timeframes</h3>
+  <p>Your trading strategy needs clear, concise rules for both entry and exit points, as well as defined timeframes. These components help reduce uncertainty and increase your chances of success. Here’s how to define them:</p>
+
+  <div style="overflow: auto;">
+    <div style="float: right; margin-left: 20px; max-width: 45%;">
+      <img src="{% static 'images/trading_10.jpg' %}" alt="Entry Exit Setup" class="img-fluid rounded">
+    </div>
+    <p><strong>Entry Rules:</strong> Define the conditions that must be met to enter a trade. These can include price breaking above a resistance level, a moving average crossover, or a specific candlestick pattern forming. The more precise your entry rules, the easier it will be to stay disciplined.</p>
+
+    <p><strong>Exit Rules:</strong> Similarly, define when you’ll exit a trade. This could be based on a price target, a trailing stop, or when an indicator shows overbought/oversold conditions. Having predefined exit rules helps you avoid emotional decision-making.</p>
+
+    <p><strong>Timeframes:</strong> The timeframe of your strategy determines how long you hold trades. Short-term traders (scalpers) might trade on a 5-minute chart, while long-term investors may trade on weekly or monthly charts. Choose a timeframe that fits your lifestyle and risk tolerance.</p>
+
+    <p>For more detailed guidelines on <a href="https://www.investopedia.com/articles/trading/08/understanding-trading-strategy.asp" target="_blank">defining your setup</a>, visit this <i>Investopedia</i> article.</p>
+  </div>
+
+  <!-- What is Backtesting and Forward Testing -->
+   
+  <h3 class="mt-5">📈 What is Backtesting and Forward Testing?</h3>
+  <div style="overflow: auto;">
+    <div style="float: right; margin-left: 20px; max-width: 45%;"><br><br>
+      <img src="{% static 'images/trading_11.jpg' %}" alt="Backtesting Example" class="img-fluid rounded">
+    </div><br>
+    <p><strong>Backtesting:</strong> <a href="https://www.investopedia.com/terms/b/backtest.asp" target="_blank">Backtesting</a> involves applying your strategy to historical market data to see how it would have performed in the past. This helps you identify potential flaws in your strategy and understand its strengths and weaknesses before using it in real-time.</p>
+
+    <p><strong>Forward Testing:</strong> <a href="https://www.investopedia.com/articles/active-trading/011216/what-forward-testing.asp" target="_blank">Forward testing</a>, also known as "paper trading," involves testing your strategy in real-time but without actual money at risk. You simulate trades based on live market conditions and record your results. This provides a more realistic understanding of how your strategy will perform under current market conditions.</p>
+
+    <p>Both backtesting and forward testing are essential steps in strategy development. Backtesting provides insights into the strategy's historical performance, while forward testing offers a way to refine it under live conditions.</p>
+  </div>
+
+  <!-- What is Risk Management -->
+  <h3 class="mt-5">💡 What is Risk Management?</h3>
+  <div style="overflow: auto;">
+    <div style="float: right; margin-left: 20px; max-width: 45%;">
+      <img src="{% static 'images/trading_12.jpg' %}" alt="Risk Management" class="img-fluid rounded">
+    </div>
+    <p>Risk management is a critical part of any successful trading strategy. It helps you preserve your capital and avoid emotional trading. Here are the key components:</p>
+
+    <p><strong>Risk/Reward Ratio:</strong> This is the ratio between the amount of risk you are willing to take on a trade and the potential reward. A typical good risk/reward ratio might be 1:3, meaning you risk $1 to potentially make $3. Setting a favorable risk/reward ratio helps you remain profitable even if your win rate is low.</p>
+
+    <p><strong>Lot Size:</strong> Lot size determines how much of a financial instrument you’re trading. It directly impacts your risk exposure. For instance, trading a larger lot size increases the potential profit but also raises the risk. Adjust your lot size according to your risk tolerance.</p>
+
+    <p><strong>Stop Loss:</strong> A stop loss is an order placed to limit losses in case the market moves against your trade. It ensures that you don’t lose more than a certain percentage of your account on a single trade. Always use stop losses to protect your capital, especially in volatile markets.</p>
+
+    <p>For a more comprehensive understanding of <a href="https://www.investopedia.com/terms/r/riskmanagement.asp" target="_blank">risk management</a>, you can explore this resource on Investopedia for a deeper dive into the process.</p>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex justify-content-between mt-5">
+    <a href="{% url 'milestone4' %}" class="btn btn-secondary px-4 py-2">⬅️ Back</a>
+    <a href="{% url 'roadmap' %}" class="btn btn-secondary px-4 py-2">⬅️ Back to Roadmap</a>
+    <a href="{% url 'milestone6' %}" class="btn btn-success px-4 py-2">Next ➡️</a>
+  </div>
+</div>
+{% endblock %}

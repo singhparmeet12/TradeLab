@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="milestone-detail" style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+
+  <h2>🚀 Going Live & Scaling Up</h2>
+  <p>After completing your training and strategy development, it’s time to transition from theory to real-world application. This milestone helps you make that shift gradually and sustainably.</p>
+
+  <!-- Demo to Live Trading -->
+  <div style="display: flex; gap: 30px; align-items: flex-start; margin-top: 50px;">
+    <div style="flex: 1;">
+      <h3>🔁 Transitioning from Demo to Live</h3>
+      <p>Trading in a demo account helps build confidence and test strategies without financial risk. However, live trading introduces real emotions and stakes. To bridge this gap:</p>
+      <ul>
+        <li>Start with small capital you're willing to risk.</li>
+        <li>Use the same strategy and risk rules you tested in demo.</li>
+        <li>Keep a journal to track trades and emotions in the live environment.</li>
+      </ul>
+      <p>Expect some emotional discomfort early on. This is natural and fades with exposure and discipline.</p>
+    </div>
+    <div style="flex: 1;">
+      <img src="{% static 'images/trading_18.png' %}" alt="Going Live" style="width: 100%; max-width: 400px; border-radius: 12px;">
+    </div>
+  </div>
+
+  <!-- Scaling Strategy -->
+  <div style="margin-top: 50px;">
+    <h3>📈 Scaling Your Strategy</h3>
+    <p>Once you're consistently profitable with small amounts, consider scaling your strategy. This doesn't mean increasing risk; it means scaling wisely:</p>
+    <ul>
+      <li>Gradually increase position size while maintaining your <a href="https://www.investopedia.com/terms/r/riskmanagement.asp" target="_blank">risk management</a> rules.</li>
+      <li>Analyze if your strategy works the same at higher capital or in different market conditions.</li>
+      <li>Revisit your win rate, drawdown, and risk-reward ratios.</li>
+    </ul>
+    <p>Never scale emotionally — only do so based on data and consistent results over time.</p>
+  </div>
+
+  <!-- Community & Education -->
+  <div style="margin-top: 50px;">
+    <h3>🌐 Community & Continued Education</h3>
+    <p>Trading can be lonely and mentally taxing. Joining a trading community can help keep you accountable, informed, and emotionally balanced. Look for:</p>
+    <ul>
+      <li><strong>Discord/Telegram groups</strong> focused on strategy sharing and live discussions.</li>
+      <li><strong>Online forums</strong> like <a href="https://www.reddit.com/r/Daytrading/" target="_blank">r/Daytrading</a> and <a href="https://www.elitetrader.com/" target="_blank">EliteTrader</a>.</li>
+      <li><strong>Mentorship & Courses:</strong> Keep learning from experienced traders, books, and courses. Platforms like <a href="https://www.babypips.com/" target="_blank">BabyPips</a> and <a href="https://www.investopedia.com/" target="_blank">Investopedia</a> are excellent starting points.</li>
+    </ul>
+    <p>Trading is a lifelong learning journey. Stay curious and open to growth even as you scale.</p>
+  </div>
+
+  <!-- YouTube Learning Resources -->
+  <div style="margin-top: 50px;">
+    <h3>📹 YouTube Channels for Learning & Live Trading</h3>
+    <p>Here are some great YouTube channels to help you continue your trading journey with valuable content and live streams:</p>
+    <ul>
+      <li><a href="https://www.youtube.com/channel/UCzGGZf5JtHhD8l5gTxLUJlA" target="_blank">The Trade Room</a></li>
+      <li><a href="https://www.youtube.com/channel/UCYc9Or6c42pH7JHTn7ICmjQ" target="_blank">BIG BULL YT</a></li>
+      <li><a href="https://www.youtube.com/channel/UC54iEIAyYrD_-ACpgkJIzKQ" target="_blank">Nifty Technicals By Ak</a></li>
+      <li><a href="https://www.youtube.com/channel/UCyQGkN2Xic-UOkyOs5n9ZKg" target="_blank">fxalex</a></li>
+      <li><a href="https://www.youtube.com/channel/UC1KjQ_DqBaV2dyX6yck4nHg" target="_blank">Traders Paradise</a></li>
+      <li><a href="https://www.youtube.com/channel/UCcNBXLyZEdIT6Fs6u6azVfw" target="_blank">Wealth Secret</a></li>
+      <li><a href="https://www.youtube.com/channel/UCi_swrJw79uFjET_3Lg1zQw" target="_blank">Power of Stocks</a></li>
+      <li><a href="https://www.youtube.com/channel/UCOhRyM1NiMBhvcg6wzHOh3w" target="_blank">The Trade Square</a></li>
+      <li><a href="https://www.youtube.com/channel/UCmkhPxt1PQSdNTq7DqO6a6w" target="_blank">Dollars With Prasad</a></li>
+      <li><a href="https://www.youtube.com/channel/UCzVEXt3JElhFvhA1qXrd2jA" target="_blank">Umar Punjabi</a></li>
+      <li><a href="https://www.youtube.com/channel/UCYYwVsIM8IZO3_oltiFvCHg" target="_blank">MambaFx Trades</a></li>
+      <li><a href="https://www.youtube.com/channel/UCXN58pwlbU09Ktmw8OtkYoA" target="_blank">Guardeer</a></li>
+      <li><a href="https://www.youtube.com/channel/UCXYOe3bYxFSdVwjyw9xAfXQ" target="_blank">Stick Burner</a></li>
+      <li><a href="https://www.youtube.com/channel/UCtO2xoJfj4J1syhZT7CwvGw" target="_blank">Pushkar Raj Thakur</a></li>
+      <li><a href="https://www.youtube.com/channel/UCp0ny1sPHyL5i3L7q4aRl-g" target="_blank">Nifty Prediction</a></li>
+    </ul>
+    <p>These YouTubers offer insights, market analysis, and trading tips to help you improve your trading skills.</p>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex justify-content-between mt-5">
+    <a href="{% url 'milestone7' %}" class="btn btn-secondary px-4 py-2">⬅️ Back</a>
+    <a href="{% url 'roadmap' %}" class="btn btn-secondary px-4 py-2">⬅️ Back to Roadmap</a>
+  </div>
+</div>
+
+<div id="congratulations-popup" style="position: fixed; bottom: 20px; right: 20px; background-color: #4caf50; color: white; padding: 10px 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); font-size: 16px;">
+  🎉 Congratulations! You've completed the roadmap! Ready to trade! 🏁
+</div>
+{% endblock %}

@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forex Market</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <style>
+    .nav-tabs {
+      background-color: #111;
+      border-bottom: 1px solid #444;
+      justify-content: center;
+    }
+
+    .nav-tabs .nav-link {
+      color: #ccc;
+      background-color: #111;
+      border: none;
+      margin-right: 5px;
+    }
+
+    .nav-tabs .nav-link.active {
+      color: black;
+      background-color: yellow;
+    }
+
+    .nav-tabs .nav-link:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body class="bg-dark text-light">
+
+  <a href="{% url 'markets' %}" class="btn btn-outline-light" style="position: absolute; top: 20px; left: 20px;">
+    ⬅ Back
+  </a>
+
+  <div class="container mt-5 pt-5">
+
+    <h1 class="text-center mb-4">Forex Trading Tools & Live Market</h1>
+    <p class="text-center">Track major forex and index charts in real-time and access essential tools for informed trading.</p>
+
+    <!-- 📈 Live Forex Charts -->
+    <h2 class="text-center mb-4">Live Forex Charts</h2>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs justify-content-center" id="forexTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="gold-tab" data-bs-toggle="tab" data-bs-target="#gold" type="button" role="tab">GOLD</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="usoil-tab" data-bs-toggle="tab" data-bs-target="#usoil" type="button" role="tab">USOIL</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="usdjpy-tab" data-bs-toggle="tab" data-bs-target="#usdjpy" type="button" role="tab">USD/JPY</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="usdcad-tab" data-bs-toggle="tab" data-bs-target="#usdcad" type="button" role="tab">USD/CAD</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="eurusd-tab" data-bs-toggle="tab" data-bs-target="#eurusd" type="button" role="tab">EUR/USD</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="gbpusd-tab" data-bs-toggle="tab" data-bs-target="#gbpusd" type="button" role="tab">GBP/USD</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="usdchf-tab" data-bs-toggle="tab" data-bs-target="#usdchf" type="button" role="tab">USD/CHF</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="us30-tab" data-bs-toggle="tab" data-bs-target="#us30" type="button" role="tab">US30</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="nasdaq-tab" data-bs-toggle="tab" data-bs-target="#nasdaq" type="button" role="tab">NASDAQ</button>
+      </li>
+    </ul>
+
+    <!-- Charts -->
+    <div class="tab-content mt-3" id="forexTabContent">
+      <div class="tab-pane fade show active" id="gold" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC:GOLD&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="usoil" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=TVC:USOIL&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="usdjpy" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=FX:USDJPY&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="usdcad" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=FX:USDCAD&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="eurusd" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=FX:EURUSD&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="gbpusd" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=FX:GBPUSD&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="usdchf" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=FX:USDCHF&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="us30" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=OANDA:US30USD&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+      <div class="tab-pane fade" id="nasdaq" role="tabpanel">
+        <iframe src="https://www.tradingview.com/widgetembed/?symbol=OANDA:NAS100USD&interval=30&theme=dark&style=1&locale=en&timezone=Etc/UTC&hideideas=1"
+          width="100%" height="700" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="row my-5 text-center">
+      <h4 class="mb-4">📰 Forex Tools</h4>
+      <div class="col-md-6 mb-3">
+        <a href="https://www.forexfactory.com/calendar" target="_blank" class="btn btn-secondary w-100">🗓️ ForexFactory News Calendar</a>
+      </div>
+      <div class="col-md-6 mb-3">
+        <a href="https://www.tradingview.com/" target="_blank" class="btn btn-secondary w-100">📊 TradingView Charting Platform</a>
+      </div>
+    </div>
+
+    <!-- Indicator -->
+    <div class="text-center mt-5">
+      <a href="{% url 'indicator' %}" class="btn btn-success btn-lg mb-3">🚀 Use My Algo for Forex Trading</a>
+    </div>
+
+    <!-- Trading CTA -->
+    <div class="text-center mt-4">
+      <a href="https://www.exness.com/" target="_blank" class="btn btn-primary btn-lg">Start Trading on Exness</a>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

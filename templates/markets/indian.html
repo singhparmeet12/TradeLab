@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Indian Market Charts</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    .nav-tabs {
+      background-color: #111; /* Dark tab bar */
+      border-bottom: 1px solid #444;
+    }
+    .nav-tabs .nav-link {
+      color: #ccc;
+      background-color: #111;
+      border: none;
+      margin-right: 5px;
+    }
+    .nav-tabs .nav-link.active {
+      color: #fff;
+      background-color: #f1c40f; /* Yellow active tab */
+    }
+    .nav-tabs .nav-link:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="bg-dark text-light">
+
+  <!-- 🔙 Back to Home -->
+  <a href="{% url 'markets' %}" class="btn btn-outline-light" style="position: absolute; top: 20px; left: 20px;">
+    ⬅ Back 
+  </a>
+
+  <div class="container mt-5 pt-5">
+    <!-- 🧠 Intro -->
+    <h1 class="text-center mb-4">Indian Market Charts</h1>
+    <p class="text-center">Explore live charts for major Indian indices and high-volume stocks.</p>
+
+    <!-- 📈 Market Charts -->
+    <div class="text-center my-5">
+      <h2 class="text-center mb-4">Live Market Charts</h2>
+
+      <!-- Tab Navigation -->
+      <ul class="nav nav-tabs justify-content-center" id="marketTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="nifty-tab" data-bs-toggle="tab" data-bs-target="#nifty" type="button" role="tab">NIFTY 50</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="banknifty-tab" data-bs-toggle="tab" data-bs-target="#banknifty" type="button" role="tab">BANK NIFTY</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="sensex-tab" data-bs-toggle="tab" data-bs-target="#sensex" type="button" role="tab">SENSEX</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="reliance-tab" data-bs-toggle="tab" data-bs-target="#reliance" type="button" role="tab">RELIANCE</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="hdfc-tab" data-bs-toggle="tab" data-bs-target="#hdfc" type="button" role="tab">HDFC BANK</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tcs-tab" data-bs-toggle="tab" data-bs-target="#tcs" type="button" role="tab">TCS</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="infosys-tab" data-bs-toggle="tab" data-bs-target="#infosys" type="button" role="tab">INFOSYS</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="icici-tab" data-bs-toggle="tab" data-bs-target="#icici" type="button" role="tab">ICICI BANK</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="lt-tab" data-bs-toggle="tab" data-bs-target="#lt" type="button" role="tab">L&T</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="hul-tab" data-bs-toggle="tab" data-bs-target="#hul" type="button" role="tab">HUL</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="bajaj-tab" data-bs-toggle="tab" data-bs-target="#bajaj" type="button" role="tab">BAJAJ FINANCE</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="axis-tab" data-bs-toggle="tab" data-bs-target="#axis" type="button" role="tab">AXIS BANK</button>
+        </li>
+      </ul>
+
+      <!-- Tab Panes (Chart Content) -->
+      <div class="tab-content mt-3" id="marketTabContent">
+        <div class="tab-pane fade show active" id="nifty" role="tabpanel">
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:NIFTY&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+            width="100%" height="500" frameborder="0"></iframe>
+        </div>
+        <div class="tab-pane fade" id="banknifty" role="tabpanel">
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:BANKNIFTY&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+            width="100%" height="500" frameborder="0"></iframe>
+        </div>
+        <div class="tab-pane fade" id="sensex" role="tabpanel">
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=BSE:SENSEX&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+            width="100%" height="500" frameborder="0"></iframe>
+        </div>
+        <div class="tab-pane fade" id="reliance" role="tabpanel">
+          <iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:RELIANCE&interval=30&theme=dark
+::contentReference[oaicite:0]{index=0}
+&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="hdfc" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:HDFCBANK&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="tcs" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:TCS&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="infosys" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:INFY&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="icici" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:ICICIBANK&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="lt" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:LT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="hul" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:HINDUNILVR&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="bajaj" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:BAJFINANCE&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+<div class="tab-pane fade" id="axis" role="tabpanel">
+<iframe src="https://www.tradingview.com/widgetembed/?symbol=NSE:AXISBANK&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+width="100%" height="500" frameborder="0"></iframe>
+</div>
+</div>
+</div>
+
+<!-- 🔧 Useful Tools -->
+<div class="row my-5 text-center">
+<h4 class="mb-4">📌 Useful Indian Market Tools</h4>
+<div class="col-md-6 mb-3">
+<a href="https://www.moneycontrol.com/stocksmarketsindia/" target="_blank" class="btn btn-secondary w-100">📊 Moneycontrol Market News</a>
+</div>
+
+<div class="col-md-6 mb-3">
+    <a href="https://www.tradingview.com/" target="_blank" class="btn btn-secondary w-100">📊 TradingView Charting Platform</a>
+</div>
+
+</div>
+
+<!-- 🤖 Algo Button -->
+<div class="text-center mt-5">
+<a href="{% url 'indicator' %}" class="btn btn-success btn-lg mb-3">🚀 Use My Algo for Stock Trading</a>
+</div>
+
+<!-- 🛒 Start Trading CTA -->
+<div class="text-center mt-4">
+<a href="https://www.zerodha.com/" target="_blank" class="btn btn-primary btn-lg">Start Trading with Zerodha</a>
+</div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

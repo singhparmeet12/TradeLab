@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 text-light">
+  <h2 class="text-center mb-4">📰 Latest Market News</h2>
+
+ 
+<br>
+  <!-- Tab content -->
+  <div class="tab-content" id="newsTabsContent">
+    <!-- Forex News -->
+    <div class="tab-pane fade show active" id="forex" role="tabpanel" aria-labelledby="forex-tab">
+      <div class="list-group">
+        {% for item in categorized_news.forex %}
+          <a href="{{ item.link }}" target="_blank" class="list-group-item list-group-item-action bg-dark text-light mb-2 rounded border border-secondary">
+            <strong>{{ item.title }}</strong><br>
+            <small class="text-muted">{{ item.published }}</small><br>
+            <p class="mb-0">{{ item.summary|safe|truncatewords:30 }}</p>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+{% endblock %}
+
+<!-- Styles for better visual interaction -->
+<style>
+  .nav-pills .nav-link {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border-radius: 0.25rem;
+    border: none;
+    font-weight: bold;
+  }
+
+  .nav-pills .nav-link.active {
+    background-color: #22c55e;
+    color: white;
+  }
+
+  .nav-link:hover {
+    background-color: #3b4758;
+  }
+
+  .list-group-item {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .list-group-item:hover {
+    transform: scale(1.05);
+    background-color: #374151;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .list-group-item strong {
+    font-size: 1.1rem;
+  }
+
+  .list-group-item small {
+    font-size: 0.9rem;
+  }
+
+  .list-group-item p {
+    font-size: 0.85rem;
+    color: #b0b3b8;
+  }
+</style>

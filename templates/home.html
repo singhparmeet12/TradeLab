@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | TradeLab{% endblock %}
+
+{% block content %}
+<header class="home-header">
+  <img src="{% static 'images/logo.jpeg' %}" alt="TradeLab Logo" class="home-logo" />
+  <p class="home-subtext">Your intelligent hub for crypto and forex trading</p>
+</header>
+
+
+
+
+<section class="features">
+
+  <div class="card">
+    <h3>🚀 Roadmap to Become a Trader</h3>
+    <p>Follow a guided 8-step journey from beginner to advanced — covering fundamentals, strategies, psychology, and going live. </p>
+    <a href="{% url 'trading_roadmap' %}" class="btn btn-custom">Start Learning</a>
+  </div>
+
+
+  <div class="card">
+    <h3>📊 Trading Instruments & Sessions</h3>
+    <p>Explore top instruments in Forex, Crypto, and Indian markets with trading windows and global session timings.</p><br>
+    <a href="{% url 'markets' %}" class="btn btn-custom">Dive In</a>
+  </div>
+  
+  <div class="card">
+    <h3>🖼️ Analyze Chart</h3><br>
+    <p>Upload a screenshot of any chart and get AI-powered insights.</p><br><br>
+    <a href="{% url 'analyze_chart' %}" class="btn btn-custom">Upload & Analyze</a>
+  </div>
+
+  
+  <div class="card">
+    <h3>🔒 Use My Indicator</h3><br>
+    <p>Access and copy your private TradingView indicator code to use manually.</p><br><br>
+    <a href="{% url 'indicator' %}" class="btn btn-custom">View Script</a>
+  </div>
+</section>
+
+<!-- Chatbot Trigger (Image Button) -->
+<div class="chatbot-button" onclick="toggleChatbot()">
+  <img
+    src="{% static 'images/chatbot.jpeg' %}"
+    alt="Open chatbot"
+    class="chatbot-icon"
+  >
+</div>
+
+<!-- Chatbot Popup Window -->
+<div id="chatbotPopup" class="chatbot-popup">
+  <div class="chatbot-header">
+      <span>Ask the Market Expert</span>
+      <button onclick="toggleChatbot()">X</button>
+  </div>
+  <div class="chatbot-body">
+      <div id="chatbotMessages"></div>
+
+      <!-- Inputs -->
+      <input id="userText" type="text" placeholder="Ask me about trading trends..." />
+      <input id="userImage" type="file" accept="image/*" />
+
+      <!-- Buttons -->
+      <button onclick="sendMessage()">Send</button>
+      <button id="backButton" onclick="showInputArea()" style="display: none;">Back</button>
+  </div>
+</div>
+
+<script>
+  let chatbotOpen = false;
+
+  function toggleChatbot() {
+    chatbotOpen = !chatbotOpen;
+    document.getElementById('chatbotPopup').style.display = chatbotOpen ? 'flex' : 'none';
+    if (!chatbotOpen) {
+      showInputArea(); // Reset inputs/buttons
+      document.getElementById('userText').value = '';
+      document.getElementById('userImage').value = '';
+      document.getElementById('chatbotMessages').innerHTML = '';
+    }
+  }
+
+  function showInputArea() {
+    document.getElementById('userText').style.display = 'block';
+    document.getElementById('userImage').style.display = 'block';
+    document.querySelector('.chatbot-body button[onclick="sendMessage()"]').style.display = 'inline-block';
+    document.getElementById('backButton').style.display = 'none';
+  }
+
+  async function sendMessage() {
+    const text = document.getElementById('userText').value;
+    const image = document.getElementById('userImage').files[0];
+    const chatbotMessages = document.getElementById('chatbotMessages');
+
+    if (text || image) {
+      const formData = new FormData();
+      if (text) formData.append('text', text);
+      if (image) formData.append('image', image);
+
+      // Show user message
+      const userMsg = document.createElement('div');
+      userMsg.textContent = text ? `You: ${text}` : `You uploaded an image.`;
+      chatbotMessages.appendChild(userMsg);
+
+      // Send to backend
+      const res = await fetch('/api/chatbot/', { method: 'POST', body: formData });
+      const data = await res.json();
+
+      // Format response lines as bullets
+      const raw = data.response || data.image_analysis;
+      const lines = raw.split('\n').filter(line => line.trim() !== '');
+      const formatted = lines.map(line => `• ${line}`).join('<br>');
+
+      const botMsg = document.createElement('div');
+      botMsg.innerHTML = formatted;
+      chatbotMessages.appendChild(botMsg);
+
+      // Scroll
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+      // Hide inputs, show Back
+      document.getElementById('userText').style.display = 'none';
+      document.getElementById('userImage').style.display = 'none';
+      document.querySelector('.chatbot-body button[onclick="sendMessage()"]').style.display = 'none';
+      document.getElementById('backButton').style.display = 'inline-block';
+
+      // Clear fields
+      document.getElementById('userText').value = '';
+      document.getElementById('userImage').value = '';
+    } else {
+      alert('Please enter text or upload an image.');
+    }
+  }
+</script>
+
+
+
+
+
+
+<section class="why-section text-light py-5" style="background: #0a0f1c;">
+  <div class="container text-center">
+    <h2 class="mb-5 display-5" style="color: #00f7ff; text-shadow: 0 0 12px #00f7ff;">Why Choose TradeLab?</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fas fa-chart-line fa-2x icon"></i>
+          <h5>Live Market Data</h5>
+          <p>Get real-time updates across all major markets — fast and accurate.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fas fa-robot fa-2x icon"></i>
+          <h5>Smart Signals </h5>
+          <p>Smart bullish & bearish signals to help you catch the right trend.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fas fa-tools fa-2x icon"></i>
+          <h5>Pro-Level Tools</h5>
+          <p>Advanced analysis tools for both beginners and experienced traders.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fas fa-shield-alt fa-2x icon"></i>
+          <h5>AI Pattern Analyses</h5>
+          <p>Find out the patterns in the chart with our AI trained model.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fas fa-bolt fa-2x icon"></i>
+          <h5>Lightning Speed</h5>
+          <p>Optimized performance for quick execution and smooth navigation.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fas fa-graduation-cap fa-2x icon"></i>
+          <h5>Learn as You Grow</h5>
+          <p>Built-in tutorials and a learning roadmap to upskill on the go.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Market</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
+  <style>
+    .nav-tabs {
+      background-color: #111; /* Dark tab bar */
+      border-bottom: 1px solid #444;
+    }
+  
+    .nav-tabs .nav-link {
+      color: #ccc;
+      background-color: #111;
+      border: none;
+      margin-right: 5px;
+    }
+  
+    .nav-tabs .nav-link.active {
+      color: #fff;
+      background-color: #0d6efd;
+    }
+  
+    .nav-tabs .nav-link:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+  
+
+  
+</head>
+<body class="bg-dark text-light">
+
+  <!-- 🔙 Back to Home -->
+  <a href="{% url 'markets' %}" class="btn btn-outline-light" style="position: absolute; top: 20px; left: 20px;">
+    ⬅ Back 
+  </a>
+
+  <div class="container mt-5 pt-5">
+
+    <!-- 🧠 Intro -->
+    <h1 class="text-center mb-4">Crypto Trading Tools & Live Market</h1>
+    <p class="text-center">Explore top crypto trading tools, live charts, and start your journey with real-time data and analysis.</p>
+
+    <!-- 📈 Crypto Chart -->
+    <div class="text-center my-5">
+
+
+<!-- Bootstrap JS Bundle (required for tabs to work) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Live Crypto Charts -->
+<h2 class="text-center mb-4">Live Crypto Charts</h2>
+
+
+<!-- Tab Navigation -->
+<ul class="nav nav-tabs justify-content-center" id="cryptoTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="btc-tab" data-bs-toggle="tab" data-bs-target="#btc" type="button" role="tab">BTC/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="sol-tab" data-bs-toggle="tab" data-bs-target="#sol" type="button" role="tab">SOL/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="eth-tab" data-bs-toggle="tab" data-bs-target="#eth" type="button" role="tab">ETH/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="ada-tab" data-bs-toggle="tab" data-bs-target="#ada" type="button" role="tab">ADA/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="bnb-tab" data-bs-toggle="tab" data-bs-target="#bnb" type="button" role="tab">BNB/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="doge-tab" data-bs-toggle="tab" data-bs-target="#doge" type="button" role="tab">DOGE/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="avax-tab" data-bs-toggle="tab" data-bs-target="#avax" type="button" role="tab">AVAX/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="xrp-tab" data-bs-toggle="tab" data-bs-target="#xrp" type="button" role="tab">XRP/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="algo-tab" data-bs-toggle="tab" data-bs-target="#algo" type="button" role="tab">ALGO/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="chz-tab" data-bs-toggle="tab" data-bs-target="#chz" type="button" role="tab">CHZ/USDT</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="near-tab" data-bs-toggle="tab" data-bs-target="#near" type="button" role="tab">NEAR/USDT</button>
+  </li>
+</ul>
+
+<!-- Tab Panes (Chart Content) -->
+<div class="tab-content mt-3" id="cryptoTabContent">
+  <div class="tab-pane fade show active" id="btc" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="sol" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:SOLUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="eth" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:ETHUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="ada" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:ADAUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="bnb" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:BNBUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="doge" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:DOGEUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="avax" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:AVAXUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="xrp" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:XRPUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="algo" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:ALGOUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="chz" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:CHZUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="500" frameborder="0"></iframe>
+  </div>
+  <div class="tab-pane fade" id="near" role="tabpanel">
+    <iframe src="https://www.tradingview.com/widgetembed/?symbol=BINANCE:NEARUSDT&interval=30&theme=dark&style=1&toolbarbg=f1f3f6&locale=en&timezone=Etc/UTC&hideideas=1"
+      width="100%" height="900" frameborder="0"></iframe>
+  </div>
+
+
+<!-- Bootstrap JS (required for tabs to work) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+
+
+<!-- 🔗 Useful Tools -->
+<div class="row my-5 text-center">
+    <h4 class="mb-4">🔧 Useful Crypto Tools</h4>
+    <div class="col-md-4 mb-3">
+      <a href="https://www.coinglass.com/pro/futures/LiquidationHeatMap" target="_blank" class="btn btn-secondary w-100">💥 Liquidation Heatmap</a>
+    </div>
+    <div class="col-md-4 mb-3">
+      <a href="https://www.coingecko.com/" target="_blank" class="btn btn-secondary w-100">📊 Coin Market Analysis (CoinGecko)</a>
+    </div>
+    <div class="col-md-4 mb-3">
+      <a href="https://www.tradingview.com/" target="_blank" class="btn btn-secondary w-100">📉 TradingView Charting Platform</a>
+    </div>
+  </div>
+  
+
+    <!-- 🤖 Algo Button -->
+    <div class="text-center mt-5">
+      <a href="{% url 'indicator' %}" class="btn btn-success btn-lg mb-3">🚀 Use My Algo for Crypto Trading</a>
+    </div>
+
+    <!-- 🛒 Start Trading CTA -->
+    <div class="text-center mt-4">
+      <a href="https://www.delta.exchange/" target="_blank" class="btn btn-primary btn-lg">Start Trading on Delta Exchange</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

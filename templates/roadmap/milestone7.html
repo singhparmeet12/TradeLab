@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="milestone-detail" style="max-width: 1000px; margin: 0 auto; padding: 40px 20px;">
+
+  <h2>🛠️ Advanced Tools & Automation</h2>
+  <p>This milestone introduces the cutting-edge tools and methods used by modern traders to improve efficiency, consistency, and execution. Automation and proper tool usage can eliminate emotional bias and speed up your trading process.</p>
+
+  <!-- Algorithmic Trading -->
+  <div style="display: flex; gap: 30px; align-items: flex-start; margin-top: 50px;">
+    <div style="flex: 1;">
+      <h3>🤖 Algorithmic Trading</h3>
+      <p>Algorithmic trading refers to using computer programs to automate trading strategies. These strategies are coded with conditions for entry, exit, and risk control. This reduces human error and allows for fast execution in volatile markets.</p>
+      <p><strong>Pine Script:</strong> A lightweight coding language by <a href="https://www.tradingview.com/pine-script-docs/en/v5/" target="_blank">TradingView</a> used to write custom indicators and strategies.</p>
+      <p><strong>Trading Bots:</strong> Bots can execute trades based on pre-programmed rules. Platforms like <a href="https://www.zenbot.xyz/" target="_blank">Zenbot</a>, <a href="https://www.hummingbot.org/" target="_blank">Hummingbot</a>, and <a href="https://trality.com/" target="_blank">Trality</a> allow you to build and test bots for free or on live markets.</p>
+    </div>
+    <div style="flex: 1;"><br><br>
+      <img src="{% static 'images/trading_15.jpg' %}" alt="Algorithmic Trading" style="width: 100%; max-width: 400px; border-radius: 12px;">
+    </div>
+  </div>
+
+  <!-- TradingView Scripts -->
+  <div style="margin-top: 50px;">
+    <h3>📜 Trading Scripts & Automation</h3>
+    <p>Platforms like TradingView provide a wide range of community-built scripts that allow users to backtest, visualize signals, and automate alerts. You can create:</p>
+    <ul>
+      <li><strong>Indicators</strong> – to visualize custom signals (e.g., custom RSI or divergence).</li>
+      <li><strong>Strategies</strong> – to backtest your setup on historical data.</li>
+      <li><strong>Alerts</strong> – trigger notifications based on custom logic (e.g., price breaking support).</li>
+    </ul>
+  </div>
+
+  <!-- Order Types -->
+  <div style="margin-top: 50px;">
+    <h3>📦 Understanding Order Types</h3>
+    <p>Different order types give you control over how and when your trades are executed. These include:</p>
+    <ul>
+      <li><strong>Market Order:</strong> Buys/sells immediately at the best available price.</li>
+      <li><strong>Limit Order:</strong> Executes only at a specific price or better.</li>
+      <li><strong>Stop Order:</strong> Triggers a market or limit order once a certain price is reached.</li>
+      <li><strong>OCO (One Cancels the Other):</strong> Places two orders; when one executes, the other is canceled.</li>
+      <li><strong>Trailing Stop:</strong> Moves with price to lock in profit while allowing upside potential.</li>
+    </ul>
+    <p>Mastering these can help you trade with precision and reduce slippage.</p>
+  </div>
+
+  <!-- Trading Tools -->
+  <div style="display: flex; gap: 30px; align-items: flex-start; margin-top: 50px;">
+    <div style="flex: 1;">
+      <h3>🧰 Tools: Screeners, Scanners & Alerts</h3>
+      <p>Efficient traders use tools to quickly identify setups and manage trades:</p>
+      <ul>
+        <li><strong>Screeners:</strong> Filter stocks, forex pairs, or crypto based on technical/fundamental conditions. Try tools like <a href="https://finviz.com/screener.ashx" target="_blank">Finviz</a>.</li>
+        <li><strong>Scanners:</strong> Real-time tools that detect breakout signals, volume surges, etc. Used primarily for intraday opportunities.</li>
+        <li><strong>Alerts:</strong> Get notified when price hits key levels or patterns form. Helps reduce screen time while staying responsive.</li>
+      </ul>
+    </div>
+    <div style="flex: 1;"><br><br>
+      <img src="{% static 'images/trading_16.jpg' %}" alt="Trading Tools" style="width: 100%; max-width: 400px; border-radius: 12px;">
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex justify-content-between mt-5">
+    <a href="{% url 'milestone6' %}" class="btn btn-secondary px-4 py-2">⬅️ Back</a>
+    <a href="{% url 'roadmap' %}" class="btn btn-secondary px-4 py-2">⬅️ Back to Roadmap</a>
+    <a href="{% url 'milestone8' %}" class="btn btn-success px-4 py-2">Next ➡️</a>
+  </div>
+</div>
+
+</div>
+{% endblock %}

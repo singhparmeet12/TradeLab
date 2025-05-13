@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5 text-light min-vh-100">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      
+      
+      <div class="text-center" style="padding: 2.5rem;">
+
+        <h3 class="text-success mb-4">📊 Analyze Your Trading Chart</h3>
+
+       
+        <form method="POST" enctype="multipart/form-data" class="mb-4 text-center">
+          {% csrf_token %}
+          <input type="file" name="chart_image" accept="image/*" required class="form-control mb-3">
+          <button type="submit" class="btn btn-success">Analyze Chart</button>
+        </form>
+
+        {% if input_image and output_image %}
+        <div class="text-center mb-4">
+          <div class="row justify-content-center">
+            
+            <!-- Uploaded Chart Column -->
+            <div class="col-md-6 mb-3">
+              <h4>📥 Uploaded Chart:</h4>
+              <img src="{{ input_image }}" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+            </div>
+      
+            <!-- Detected Patterns Column -->
+            <div class="col-md-6 mb-3">
+              <h4>🔍 Detected Patterns:</h4>
+              <img src="{{ output_image }}" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+            </div>
+      
+          </div>
+        </div>
+      {% elif error %}
+        <div class="alert alert-danger text-center">{{ error }}</div>
+      {% endif %}
+
+      
+        <div class="text-center mt-4">
+          <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#learnModal">📚 Learn About Chart Patterns</button>
+        </div>
+
+        
+        <div class="text-center mt-4">
+          <a href="{% url 'analyze_chart' %}" class="btn btn-outline-info">📤 Analyze Another Chart</a>
+          <a href="{% url 'home' %}" class="btn btn-outline-light">🏠 Back to Home</a>
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+                      <!-- Disclaimer box -->
+                      <div class="border rounded p-4" style="border-color: #22c55e; background: #111827;">
+                        <h5 class="text-warning"><i class="bi bi-exclamation-triangle"></i> PATTERN CONFIDENCE DISCLAIMER</h5>
+                        <ul class="ps-3">
+                          <li><span class="text-success fw-bold">Above 0.80</span> – High confidence: Strong match. Generally reliable.</li>
+                          <li><span class="text-warning fw-bold">0.50 to 0.80</span> – Medium confidence: May be useful, but review manually.</li>
+                          <li><span class="text-danger fw-bold">Below 0.50</span> – Low confidence: Treat with caution. Possible false positive.</li>
+                        </ul>
+                        <hr class="border-secondary">
+                        <p>This tool is meant to assist in analysis, <strong>not to replace</strong> professional judgment. Always confirm patterns manually before making trading decisions.</p>
+                      </div>
+                    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Learn Modal -->
+<div class="modal fade" id="learnModal" tabindex="-1" aria-labelledby="learnModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background-color: #1d1f21; color: #f1f1f1;">
+      <div class="modal-header">
+        <h5 class="modal-title text-success" id="learnModalLabel">📚 Learn About Chart Patterns</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-light">
+        <ul class="list-unstyled">
+
+          <!-- 1. Double Top -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>1. Double Top <span style="color: red;">🔻</span></strong>
+            </h3>
+            <p>The Double Top pattern is a bearish reversal pattern that typically occurs after an extended uptrend.</p>
+            <ul>
+              <li>Appears after an uptrend.</li>
+              <li>Two peaks at similar price levels.</li>
+              <li>Confirmation occurs when the price breaks below the neckline.</li>
+              <li>Signals potential bearish reversal.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/d/doubletop.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 2. Double Bottom -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>2. Double Bottom <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>The Double Bottom is a bullish reversal pattern that forms after a downtrend.</p>
+            <ul>
+              <li>Appears after a downtrend.</li>
+              <li>Two lows at similar price levels.</li>
+              <li>Break above neckline confirms bullish reversal.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/d/doublebottom.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+
+          
+        
+          <!-- 3. Head and Shoulders -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>3. Head and Shoulders <span style="color: red;">🔻</span></strong>
+            </h3>
+            <p>A bearish reversal pattern that shows a peak (head) between two lower highs (shoulders).</p>
+            <ul>
+              <li>Commonly appears at the top of uptrends.</li>
+              <li>Break below the neckline confirms the pattern.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/h/head-shoulders.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 4. Inverse Head and Shoulders -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>4. Inverse Head and Shoulders <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>A bullish reversal pattern that signals the end of a downtrend.</p>
+            <ul>
+              <li>Low (left shoulder), lower low (head), higher low (right shoulder).</li>
+              <li>Break above neckline confirms bullish move.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/i/inverseheadandshoulders.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 5. Ascending Triangle -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>5. Ascending Triangle <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>A continuation pattern that suggests a potential upward breakout.</p>
+            <ul>
+              <li>Flat resistance line with rising support.</li>
+              <li>Indicates buyer strength and accumulation.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/a/ascendingtriangle.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 6. Descending Triangle -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>6. Descending Triangle <span style="color: red;">🔻</span></strong>
+            </h3>
+            <p>A continuation pattern that suggests a potential downward breakout.</p>
+            <ul>
+              <li>Flat support line with descending resistance.</li>
+              <li>Indicates selling pressure and distribution.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/d/descendingtriangle.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 7. Symmetrical Triangle -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>7. Symmetrical Triangle</strong>
+            </h3>
+            <p>A neutral pattern that can break in either direction.</p>
+            <ul>
+              <li>Converging trend lines of support and resistance.</li>
+              <li>Wait for breakout to confirm direction.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/s/symmetricaltriangle.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 8. Cup and Handle -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>8. Cup and Handle <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>A bullish continuation pattern that resembles a tea cup.</p>
+            <ul>
+              <li>Rounded bottom followed by a slight downward channel (handle).</li>
+              <li>Breakout above handle signals bullish move.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/c/cupandhandle.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 9. Wedge (Falling) -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>9. Falling Wedge <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>A bullish reversal pattern that occurs during a downtrend.</p>
+            <ul>
+              <li>Price consolidates in a downward-sloping channel.</li>
+              <li>Breakout to the upside confirms reversal.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/w/wedge.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 10. Rising Wedge -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>10. Rising Wedge <span style="color: red;">🔻</span></strong>
+            </h3>
+            <p>A bearish reversal pattern that forms during an uptrend.</p>
+            <ul>
+              <li>Price tightens within an upward-sloping channel.</li>
+              <li>Breakout to the downside confirms bearish move.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/w/wedge.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 11. Bullish Flag -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>11. Bullish Flag <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>A continuation pattern indicating strong upward momentum after consolidation.</p>
+            <ul>
+              <li>Sharp rally followed by a short, downward-sloping channel.</li>
+              <li>Breakout upward resumes prior trend.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/articles/active-trading/061914/using-bull-flag-patterns-buy-stocks.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 12. Bearish Flag -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>12. Bearish Flag <span style="color: red;">🔻</span></strong>
+            </h3>
+            <p>A continuation pattern showing strong selling pressure followed by consolidation.</p>
+            <ul>
+              <li>Sharp drop followed by upward-sloping consolidation.</li>
+              <li>Break below confirms downtrend continuation.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.babypips.com/learn/forex/bearish-flag" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 13. Pennant -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>13. Pennant</strong>
+            </h3>
+            <p>A short-term continuation pattern similar to a symmetrical triangle.</p>
+            <ul>
+              <li>Sharp price move followed by consolidation with converging trend lines.</li>
+              <li>Breakout continues the previous trend.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/p/pennant.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 14. Rectangle -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>14. Rectangle</strong>
+            </h3>
+            <p>A consolidation pattern where price moves within a horizontal range.</p>
+            <ul>
+              <li>Equal support and resistance zones.</li>
+              <li>Breakout direction determines trade bias.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/r/rectangle.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+        
+          <!-- 15. Rounding Bottom -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>15. Rounding Bottom <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>A long-term reversal pattern that indicates a gradual shift from bearish to bullish.</p>
+            <ul>
+              <li>Price slowly changes direction forming a bowl shape.</li>
+              <li>Breakout occurs after resistance is cleared.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/r/roundingbottom.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+
+          <!-- 3. Triple Top -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>16. Triple Top <span style="color: red;">🔻</span></strong>
+            </h3>
+            <p>The Triple Top pattern is a bearish reversal pattern that forms after an extended uptrend, showing strong resistance at a similar price level.</p>
+            <ul>
+              <li>Appears after a sustained uptrend.</li>
+              <li>Three peaks at roughly the same price level.</li>
+              <li>Signals weakening momentum and potential reversal.</li>
+              <li>Confirmation occurs when the price breaks below the neckline support.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/t/triple-top.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+
+          <!-- 4. Triple Bottom -->
+          <li class="mb-5">
+            <h3 style="font-size: 1.5em;">
+              <strong>17. Triple Bottom <span style="color: green;">🔺</span></strong>
+            </h3>
+            <p>The Triple Bottom is a bullish reversal pattern that appears after a downtrend, indicating strong support and increasing buying pressure.</p>
+            <ul>
+              <li>Occurs after a prolonged downtrend.</li>
+              <li>Three lows at approximately the same level.</li>
+              <li>Indicates accumulation and potential reversal.</li>
+              <li>Breakout above the neckline confirms bullish intent.</li>
+            </ul>
+            <div style="margin-top: 12px;">
+              <a href="https://www.investopedia.com/terms/t/triple-bottom.asp" target="_blank" class="text-info text-decoration-underline">Click to learn more</a>
+            </div>
+          </li>
+
+        
+        </ul>
+        
+        <div class="text-center mt-4">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

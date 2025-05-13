@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trading Instruments & Sessions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    body {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .market-box {
+      background-color: #1f1f1f;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: 0.3s ease;
+    }
+
+    .market-box {
+  background-color: #534a4a15;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 5px rgba(1, 243, 243, 0.87);
+    }
+    .market-box:hover {
+  box-shadow: 0 0 20px 4px rgba(42, 244, 255, 0.6); 
+}
+
+
+    
+    .market-box img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .market-title {
+      font-size: 1.6rem;
+      color: #00f0ff;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .btn-custom {
+      background-color: #00f0ff;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+    .btn-custom:hover {
+      background-color: #00c0cc;
+    }
+    .market-section p {
+      text-align: left;
+    }
+    .market-section ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5">
+  <h2 class="text-center mb-4">📊 Trading Instruments & Sessions</h2>
+  <p class="text-center fw-bold">
+    Crypto is open 24/7, Forex runs 24/5, and Indian markets operate during day hours. Choose what fits your time, capital, and risk style.
+  </p>
+  <a href="{% url 'home' %}" class="btn btn-outline-light" style="position: absolute; top: 20px; left: 20px; font-size: 14px; padding: 6px 12px;">
+    ⬅ Back to Home
+  </a>
+  <br><br>
+  <div class="row">
+
+    <!-- Crypto Market -->
+    <div class="col-md-4">
+      <div class="market-box text-center market-section">
+        <div class="market-title">Crypto Market</div><br>
+        <img src="{% static 'images/crypto.jpeg' %}" alt="Crypto Market"><br><br>
+        <p><strong>Top Instruments:</strong> BTC, ETH, SOL, XRP</p>
+        <p><strong>Trading Hours:</strong> 24/7</p>
+       
+        <p><strong>High Volatility:</strong> During U.S. market open (7 PM – 1 AM IST)</p>
+        <br><br>
+        <p>✅ Market open 24/7 – trade any time</p>
+        <p>✅ High volatility enables fast profits for scalpers</p>
+        <p>✅ Start trading with low capital (₹500+)</p>
+        <p>✅ Direct trade on index chart</p>
+        <p>✅ High leverage available on most platforms</p><br><br>
+        <p>❌ Highly volatile and risky</p>
+        <p>❌ Risky in long-term investment due to instability</p>
+        <p>❌ Susceptible to scams, hacks, and security threats</p>
+        
+        <br>
+        <p>With high leverage available, even ₹200–₹500 can be used to make ₹1000-₹2000 </p>
+        <br>
+        <p><strong>Platforms:</strong>
+              <a href="https://www.delta.exchange/" target="_blank">Delta Exchange</a>
+        </p><br><br>
+        <a href="{% url 'crypto_market' %}" class="btn btn-custom mt-3">View Crypto Details</a>
+
+      </div>
+      <!-- Example for Crypto -->
+    </div>
+    
+
+    <!-- Forex Market -->
+    <div class="col-md-4">
+      <div class="market-box text-center market-section">
+        <div class="market-title">Forex Market</div><br>
+        <img src="{% static 'images/forex.jpeg' %}" alt="Forex Market"><br><br>
+        <p><strong>Top Instruments:</strong> EUR/USD, GBP/JPY, USD/JPY, XAU/USD (Gold)</p>
+        <p><strong>Trading Hours:</strong> 24/5 (Mon–Fri)</p>
+        <p><strong>High Volatility:</strong> London–New York overlap (5:30 PM – 8:30 PM IST)</p><br>
+        <p>✅ Market open 24/5 - trade any time</p>
+        <p>✅ Leverage up to 1:500</p>
+        <p>✅ Small capital friendly (₹1000+)</p>
+        <p>✅ Direct trade on index chart</p>
+        <p>✅ Great for scalping and short-term trades, especially with limited funds</p><br>
+        <p>❌ Complex for beginners</p>
+        <p>❌ Not ideal for long-term investing — better suited for short-term strategies</p>
+        <p>❌ High Risk with Leverage</p>
+        <br>
+        <p>Forex allows you to trade larger positions with smaller capital, making it accessible for beginners aiming to grow with limited funds.</p>
+    
+        <p><strong>Platforms:</strong>
+          <a href="https://www.exness.com/" target="_blank">Exness</a>
+        </p><br>
+        <a href="{% url 'forex_market' %}" class="btn btn-custom mt-3">View Forex Details</a>
+
+      </div>
+    </div>
+
+    <!-- Indian Market -->
+    <div class="col-md-4">
+      <div class="market-box text-center market-section">
+        <div class="market-title">Indian Market</div><br>
+        <img src="{% static 'images/indian.jpeg' %}" alt="Indian Market"><br><br>
+        <p><strong>Top Instruments:</strong> NIFTY 50, SENSEX, Bank NIFTY</p>
+        <p><strong>Trading Hours:</strong> 9:15 AM – 3:30 PM IST</p>
+        <p><strong>High Volatility:</strong> First & last hour of market (9:15–10:15 AM, 2:30–3:30 PM)</p><br>
+        <p>✅ Regulated by SEBI</p>
+        <p>✅ Excellent for Long-Term Investment</p>
+        <p>✅ Diverse Investment Options: Stocks, ETFs, mutual funds, SIPs</p>
+        <p>✅ Lowest Brokerage Fees</p><br>
+        <p>❌ Not ideal for scalping or short-term gains for users with low capital</p>
+        <p>❌ Higher capital requirement (₹10,000+)</p>
+        <p>❌ Low leverage </p>
+        <p>❌ Limited trading hours</p>
+        <p>❌ Can't trade index chart</p>
+        <p>❌ Slower returns compared to Crypto and Forex</p><br>
+        <p>Since leverage is limited, earning ₹1000–₹2000 daily may require deploying capital of ₹10,000 or more.</p>
+    
+        <p><strong>Platforms:</strong>
+          <a href="https://zerodha.com/" target="_blank">Zerodha</a>, 
+          <a href="https://www.upstox.com/" target="_blank">Upstox</a>, 
+          <a href="https://groww.in/" target="_blank">Groww</a>
+        </p>
+        <a href="{% url 'indian_market' %}" class="btn btn-custom mt-3">View Indian Market Details</a>
+
+      </div>
+    </div>
+</div> <!-- End of .row -->
+
+</body>
+</html>

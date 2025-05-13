@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="milestone-detail" style="max-width: 1000px; margin: auto; padding: 40px;">
+
+  <h2 class="text-center mb-4">📊 Technical Foundations</h2>
+
+  <p class="mb-4 text-center">
+    This milestone covers the essential visual tools and principles that guide technical traders in making informed decisions. From chart patterns to volume dynamics, you'll gain insights into the psychological forces behind price movements and how to strategically enter and exit trades with greater precision.
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; margin-bottom: 40px;">
+    <div style="flex: 1 1 60%;">
+      <ul style="padding-left: 20px;">
+        <br><br>
+        <h4>Technical Analysis</h4>
+        <p>
+          One of the foundational skills in trading is understanding <a href="https://www.investopedia.com/terms/t/technicalanalysis.asp" target="_blank">technical analysis</a>. This approach involves studying historical price charts and identifying patterns that may suggest future movements. It shifts the focus away from company news or fundamentals and places it on price behavior and market sentiment. Technical analysis helps traders stay objective by relying on data and visual indicators, making it especially useful in fast-paced markets.
+        </p>
+        <ul>
+          <li>Focuses on price and volume over fundamentals</li>
+          <li>Seeks patterns to forecast potential movements</li>
+          <li>Useful for short- to medium-term trading strategies</li>
+        </ul>
+<br><br>
+        <p>
+            <h4>Candlestick Chart</h4>
+          A core part of this analysis is learning to read various chart types. The most widely used is the <a href="https://www.investopedia.com/terms/c/candlestick.asp" target="_blank">candlestick chart</a>, which shows the open, high, low, and close prices for each trading session, offering rich visual insight into price action. Line charts simplify this view by connecting only closing prices, while bar charts present similar data to candlesticks but in a more compressed form.
+        </p>
+        <ul>
+          <li>Candlestick charts reflect market sentiment within a session</li>
+          <li>Line charts emphasize trend direction</li>
+          <li>Bar charts provide an alternate view of price data</li>
+        </ul>
+        <br><br>
+        <p>
+            <h4>Support and Resistance</h4>
+          As you analyze these charts, identifying <a href="https://www.investopedia.com/terms/s/support.asp" target="_blank">support</a> and <a href="https://www.investopedia.com/terms/r/resistance.asp" target="_blank">resistance</a> levels becomes critical. These price zones act as barriers where a trend is likely to pause or reverse. Support is the price level where buying interest tends to overcome selling, creating a floor. Resistance is the opposite—a ceiling where selling pressure increases.
+        </p>
+        <ul>
+          <li>Support = demand zone (price floor)</li>
+          <li>Resistance = supply zone (price ceiling)</li>
+          <li>Breakouts occur when price moves beyond these levels</li>
+        </ul>
+        <br><br>
+        <p>
+            <h4>TrendLine</h4>
+          Another helpful tool is the use of <a href="https://www.investopedia.com/articles/active-trading/102914/how-draw-trend-lines-right-way.asp" target="_blank">trendlines</a>, which are diagonal lines connecting either higher lows (uptrend) or lower highs (downtrend). These lines help identify the current price direction and can serve as visual confirmations of trend continuation or reversal.
+        </p>
+        <ul>
+          <li>Drawn across swing highs/lows</li>
+          <li>Identify market direction and structure</li>
+          <li>Used to confirm or anticipate trend changes</li>
+        </ul>
+        <br><br>
+        <h4>Market Trend</h4>
+        <p>
+          It’s important to recognize the prevailing <a href="https://www.investopedia.com/terms/m/market-trend.asp" target="_blank">market trend</a> before placing trades. A trend indicates the general direction in which an asset’s price is moving. Uptrends signal buyer dominance, downtrends reflect seller control, and sideways trends indicate a balance between the two.
+        </p>
+        <ul>
+          <li>Uptrend = higher highs and higher lows</li>
+          <li>Downtrend = lower highs and lower lows</li>
+          <li>Sideways = consolidation between support and resistance</li>
+        </ul>
+        <br><br>
+        <p>
+            <h4>Volume</h4>
+          Finally, analyzing <a href="https://www.investopedia.com/terms/v/volume.asp" target="_blank">volume</a> provides clues about the strength or weakness of a price move. Volume refers to the number of trades executed over a period and is considered a leading indicator. A price breakout with high volume suggests conviction behind the move, whereas low volume may hint at a false breakout or a lack of momentum.
+        </p>
+        <ul>
+          <li>High volume = strong conviction in price move</li>
+          <li>Low volume = weak or uncertain trend</li>
+          <li>Volume divergence = early warning of potential reversal</li>
+        </ul>
+
+      </ul>
+    </div>
+
+    <div style="flex: 1 1 35%;"><br><br><br><br>
+        <img src="{% static 'images/trading_3.jpg' %}" alt="Chart Example"
+        
+        style="width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <img src="{% static 'images/trading_4.jpg' %}" alt="Volume Example"
+        
+        style="width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 30px;">
+       
+        
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex justify-content-between mt-5">
+    <a href="{% url 'milestone1' %}" class="btn btn-secondary px-4 py-2">⬅️ Back</a>
+    <a href="{% url 'roadmap' %}" class="btn btn-secondary px-4 py-2">⬅️ Back to Roadmap</a>
+    <a href="{% url 'milestone3' %}" class="btn btn-success px-4 py-2">Next ➡️</a>
+  </div>
+
+</div>
+{% endblock %}

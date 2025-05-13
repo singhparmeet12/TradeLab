@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="milestone-detail text-light px-5 py-4" style="max-width: 1000px; margin: auto;"><br>
+  <h2 class="text-center mb-4">📉 Chart Patterns & Market Structure</h2>
+
+  <p>Chart patterns and market structure help traders interpret price behavior and anticipate market moves. Understanding how patterns form and how structure shifts allows traders to time entries and exits more precisely.</p>
+
+  <!-- Reversal Patterns -->
+  <h3 class="mt-5">🔁 Reversal Patterns</h3>
+  <div style="overflow: auto;">
+    <div style="float: right; margin-left: 20px; max-width: 45%;">
+      <img src="{% static 'images/trading_8.webp' %}" alt="Reversal Patterns" class="img-fluid rounded mb-3">
+    </div>
+    <p><a href="https://www.investopedia.com/terms/r/reversal.asp" target="_blank" class="text-info">Reversal patterns</a> indicate a possible change in the direction of the current trend. They are especially useful after strong bullish or bearish moves, helping traders anticipate turning points in the market.</p>
+
+    <p><strong>Double Top:</strong> A bearish signal formed when price hits a similar high twice and fails to break higher, indicating resistance and a potential drop once the neckline is broken.</p>
+
+    <p><strong>Double Bottom:</strong> A bullish signal showing two price lows at the same level, suggesting support. A breakout above the neckline typically confirms the reversal.</p>
+
+    <p><strong>Head & Shoulders:</strong> Consists of a central peak (head) with two smaller peaks on either side (shoulders). It's a bearish reversal structure that often signals the end of an uptrend.</p>
+
+    <p><strong>Inverse Head & Shoulders:</strong> A bullish version, indicating a reversal from downtrend to uptrend. It forms after a prolonged decline and signals upward momentum if the neckline breaks.</p>
+  </div>
+
+  <!-- Continuation Patterns -->
+  <h3 class="mt-5 clear-fix">🔄 Continuation Patterns</h3>
+  <p>Unlike reversals, <a href="https://www.investopedia.com/terms/c/continuationpattern.asp" target="_blank" class="text-info">continuation patterns</a> suggest the prevailing trend is likely to continue after a brief consolidation or pause.</p>
+
+  <p><strong>Flags:</strong> Short-term rectangles that slope opposite to the main trend. After a sharp move, price consolidates in a narrow range before continuing in the same direction.</p>
+
+  <p><strong>Pennants:</strong> Small symmetrical triangles formed after strong price moves. They represent a balance between buyers and sellers, and usually result in a breakout in the original trend's direction.</p>
+
+  <p>These patterns provide low-risk entry opportunities during a trend.</p><br>
+
+  <!-- Breakout vs Consolidation -->
+  <h3 class="mt-5">💥 Breakout vs Consolidation Zones</h3>
+  <div style="overflow: auto;">
+    <div style="float: right; margin-left: 20px; max-width: 45%;">
+      <img src="{% static 'images/trading_19.jpg' %}" alt="Breakout Example" class="img-fluid rounded">
+    </div>
+    <p>A <a href="https://www.investopedia.com/terms/c/consolidation.asp" target="_blank" class="text-info">consolidation</a> zone is a range-bound area where the market trades sideways. This occurs when neither buyers nor sellers are in control. It typically precedes a strong directional move.</p>
+
+    <p>A <a href="https://www.investopedia.com/terms/b/breakout.asp" target="_blank" class="text-info">breakout</a> happens when the price breaches a defined support or resistance level with volume. Breakouts often mark the beginning of new trends and are crucial moments for momentum traders.</p>
+  </div>
+
+  <!-- Market Structure --><br>
+  <h3 class="mt-5 clear-fix">📊 What is Market Structure?</h3>
+  <div style="overflow: auto;">
+    <div style="float: right; margin-left: 20px; max-width: 45%;">
+      <img src="{% static 'images/trading_9.png' %}" alt="Market Structure Diagram" class="img-fluid rounded">
+    </div>
+    <p><a href="https://www.tradingview.com/ideas/marketstructure/" target="_blank" class="text-info">Market structure</a> refers to the sequence of highs and lows that price forms over time. Recognizing this flow allows traders to stay aligned with the dominant trend.</p>
+
+    <p><strong>Higher Highs and Higher Lows (HH/HL):</strong> These form a bullish market structure. Each high surpasses the previous, and each low is higher, showing increasing demand.</p>
+
+    <p><strong>Lower Highs and Lower Lows (LH/LL):</strong> These form a bearish market structure. Each new peak and trough is lower than the last, indicating consistent downward pressure.</p>
+
+    <p><strong>Break of Structure (BoS):</strong> This occurs when price fails to maintain the current sequence of highs or lows, signaling a potential reversal or transition phase.</p>
+  </div><br>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex justify-content-between mt-5">
+    <a href="{% url 'milestone3' %}" class="btn btn-secondary px-4 py-2">⬅️ Back</a>
+    <a href="{% url 'roadmap' %}" class="btn btn-secondary px-4 py-2">⬅️ Back to Roadmap</a>
+
+
+    <a href="{% url 'milestone5' %}" class="btn btn-success px-4 py-2">Next ➡️</a>
+  </div>
+</div>
+{% endblock %}

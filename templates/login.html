@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5" style="max-width: 400px;">
+  <h2 class="text-center mb-4">🔐 Login to TradeLab</h2>
+
+  {% if error_message %}
+    <div class="alert alert-danger" role="alert">
+      {{ error_message }}
+    </div>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="id_username" class="form-label">Username</label>
+      <input type="text" name="username" class="form-control" id="id_username" required>
+    </div>
+    <div class="mb-3">
+      <label for="id_password" class="form-label">Password</label>
+      
+      <input type="password" name="password" class="form-control" id="id_password" required>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Login</button><br><br>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+  </form>
+</div>
+{% endblock %}

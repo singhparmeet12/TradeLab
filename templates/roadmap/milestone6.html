@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="milestone-detail" style="max-width: 960px; margin: 0 auto; padding: 40px 20px;">
+  <h2 style="text-align: center;">🧠 Trading Psychology & Discipline</h2>
+
+  <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 40px;">
+    <div style="flex: 1;">
+<br><br><br>
+      <p><strong>Mindset Matters:</strong> Emotions are the trader’s biggest enemy. Fear, greed, and <a href="https://www.investopedia.com/terms/f/fomo.asp" target="_blank">FOMO</a> can override logic and sabotage even great strategies.</p>
+      <ul>
+        <li><strong>Fear:</strong> Makes you exit early, avoid trades, or hesitate on valid setups.</li>
+        <li><strong>Greed:</strong> Keeps you in trades too long, hoping for more even after targets hit.</li>
+        <li><strong>FOMO:</strong> Leads to impulsive entries just because “everyone is trading it.”</li>
+        <li><strong>Solution:</strong> Create rules, follow them blindly, and detach from outcomes.</li>
+      </ul>
+      <br>
+      <p><strong>Journaling for Growth:</strong> Logging your trades reveals your habits, mistakes, and emotional triggers.</p>
+      <ul>
+        <li>Track entries, exits, reasoning, results, and emotions.</li>
+        <li>Review weekly to find recurring mistakes.</li>
+        <li>Helps improve both your psychology and strategy.</li>
+        <li>Example guide: <a href="https://www.tradingwithrayner.com/how-to-create-a-trading-journal/" target="_blank">How to build a trading journal</a>.</li>
+      </ul>
+      <br>
+      <p><strong>Discipline through Rules:</strong> Discipline means following your plan, not your feelings.</p>
+      <ul>
+        <li>Define clear entry/exit rules, stop losses, position sizes.</li>
+        <li>Use a checklist before every trade to reduce emotion-driven decisions.</li>
+        <li>Consistency matters more than perfection.</li>
+        <li>Read more about rule-based trading at <a href="https://www.babypips.com/learn/forex/discipline-in-trading" target="_blank">Babypips</a>.</li>
+      </ul>
+      <br>
+      <p><strong>Helpful Habits for Mind Control:</strong></p>
+      <ul>
+        <li>Set a pre-trading routine (news check, chart scan, mindset check).</li>
+        <li>Only trade if a setup fully matches your plan.</li>
+        <li>Take breaks after losses to reset your focus.</li>
+        <li>Focus on the process, not the profit.</li>
+      </ul>
+      <br>
+      <p><strong>Key Takeaway:</strong> Trading success comes less from predicting the market and more from managing yourself. Master your emotions, journal your behavior, and build rules that protect you from impulsive decisions.</p>
+    </div>
+
+    <div class="col-md-4">
+        <div class="image-spacing"><br>
+          <br>
+          <br>
+          <br>
+          <img src="{% static 'images/trading_13.jpg' %}" alt="Trading Overview" class="img-fluid rounded shadow">
+          <p class="text-center mt-2"></p>
+        </div>
+        <br>
+          <br><br><br><br><br> <br><br><br><br><br>
+        <div class="image-section mb-5">
+          <p>   <img src="{% static 'images/trading_14.jpg' %}" alt="Market Types" class="img-fluid rounded shadow">
+          <p class="text-center mt-2"></p>
+        </div>
+      </div>
+    </div>
+
+  <div class="d-flex justify-content-between mt-5">
+    <a href="{% url 'milestone5' %}" class="btn btn-secondary px-4 py-2">⬅️ Back</a>
+    <a href="{% url 'roadmap' %}" class="btn btn-secondary px-4 py-2">⬅️ Back to Roadmap</a>
+    <a href="{% url 'milestone7' %}" class="btn btn-success px-4 py-2">Next ➡️</a>
+  </div>
+</div>
+{% endblock %}

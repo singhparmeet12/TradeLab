@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="milestone-detail" style="max-width: 900px; margin: auto; padding: 20px; font-size: 17px; line-height: 1.8;"><br>
+  <h2 style="text-align: center;">📊 Price Action & Indicators</h2><br>
+
+  <p>
+    In this milestone, we’ll explore how to analyze market behavior through 
+    <a href="https://www.investopedia.com/articles/trading/05/031705.asp" target="_blank"><strong>price action</strong></a> 
+    and how to complement it using technical indicators. These are essential skills for traders aiming to make sense of charts without relying too much on guesswork.
+  </p>
+
+  <!-- Price Action Section -->
+  <div style="display: flex; gap: 30px; align-items: center; margin: 40px 0;">
+    <div style="flex: 1;">
+      <h3>📌 Price Action</h3>
+      <p>
+        <strong>Price action</strong> refers to analyzing the movement of price over time — without relying on indicators. It is based on reading raw market data through chart structures, patterns, and candlesticks to predict future moves.
+      </p>
+      <p>
+        Price action helps traders spot key levels of support/resistance, trend direction, and market sentiment. It’s widely used for its clarity and directness — what you see is what you get.
+      </p>
+      <ul>
+        <li><strong>High Precision:</strong> Allows entry at logical areas like breakouts, pullbacks, or rejections.</li>
+        <li><strong>No Lag:</strong> Unlike indicators, price action reflects real-time price behavior.</li>
+        <li><strong>Universally Applicable:</strong> Works across Forex, stocks, crypto, and commodities.</li>
+      </ul>
+    </div>
+    <div style="flex: 1;">
+      <img src="{% static 'images/trading_6.png' %}" alt="Price Action Example"
+           style="width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+
+  <!-- Candlestick Psychology -->
+  <h3> Candlestick Psychology</h3>
+  <p>
+    Every candlestick tells a story about the battle between buyers and sellers. Candlestick psychology reveals how price is accepted or rejected during a trading session. Size, wick, and position of the candle reveal the emotional dynamics of the market.
+  </p>
+  <ul>
+    <li><strong>Long bodies</strong> = strong conviction (buying or selling).</li>
+    <li><strong>Long wicks</strong> = price rejection at extremes (potential reversal signals).</li>
+    <li><strong>Small bodies</strong> = indecision (market is unsure about next direction).</li>
+  </ul>
+
+  <!-- Bullish & Bearish Patterns -->
+  <div style="display: flex; gap: 30px; align-items: center; margin: 40px 0;">
+    <div style="flex: 1;"><br>
+      <h4><strong>What are Bullish and Bearish Patterns?</strong></h4>
+      <p>
+        <strong>Bullish patterns</strong> are formations on the chart that suggest buyers are gaining strength and that price may rise. These usually form after a downtrend and signal a reversal or continuation upward.
+      </p>
+      <p>
+        <strong>Bearish patterns</strong> indicate seller dominance, often appearing after an uptrend, suggesting the price could drop. They warn traders of weakening buying pressure.
+      </p>
+
+      <p><strong>Examples of Bullish Patterns:</strong></p>
+      <ul>
+        <li><strong>Bullish Engulfing</strong></li>
+        <li><strong>Hammer</strong></li>
+        <li><strong>Morning Star</strong></li>
+      </ul>
+
+      <p><strong>Examples of Bearish Patterns:</strong></p>
+      <ul>
+        <li><strong>Bearish Engulfing</strong></li>
+        <li><strong>Shooting Star</strong></li>
+        <li><strong>Evening Star</strong></li>
+      </ul>
+    </div>
+    <div style="flex: 1;">
+      <img src="{% static 'images/trading_7.png' %}" alt="Bullish and Bearish Patterns"
+           style="width: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+
+  <!-- Indicators -->
+  <div style="margin-top: 60px;">
+    <h3>📈 Technical Indicators</h3>
+    <p>
+      <strong>Indicators</strong> are mathematical formulas or visual overlays applied to price and volume. Their primary purpose is to help traders identify trends, measure momentum, confirm price patterns, and spot entry/exit signals. Indicators are helpful for objective decision-making, especially when price action is unclear.
+    </p>
+
+    <p><strong>Most common indicators used by traders:</strong></p>
+    <ul>
+      <li><strong>RSI (Relative Strength Index):</strong> Shows whether an asset is overbought (>70) or oversold (<30).</li>
+      <li><strong>MACD (Moving Average Convergence Divergence):</strong> Helps identify momentum and trend direction using moving averages.</li>
+      <li><strong>EMA (Exponential Moving Average):</strong> Gives more weight to recent prices for faster trend signals.</li>
+      <li><strong>Volume:</strong> Measures strength of buying/selling activity. High volume often confirms breakouts or breakdowns.</li>
+      <li><strong>Bollinger Bands:</strong> Show volatility expansion/contraction. Useful for breakout or mean-reversion strategies.</li>
+    </ul>
+    <br><br>
+    <p style="margin-top: 15px;">
+      📚 Want to explore more? ➡️ 
+      <a href="https://www.incrediblecharts.com/indicators/technical-indicators.php" target="_blank"><strong>See full list of technical indicators</strong></a>
+    </p>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex justify-content-between mt-5">
+    <a href="{% url 'milestone2' %}" class="btn btn-secondary px-4 py-2">⬅️ Back</a>
+    <a href="{% url 'roadmap' %}" class="btn btn-secondary px-4 py-2">⬅️ Back to Roadmap</a>
+    <a href="{% url 'milestone4' %}" class="btn btn-success px-4 py-2">Next ➡️</a>
+  </div>
+
+</div>
+{% endblock %}
