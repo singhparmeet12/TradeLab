@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tradelab
+    runtime: python
+    buildCommand: "./.render/build.sh"
+    startCommand: "gunicorn trading_app.wsgi"
+    env: python
+    branch: main
+    region: oregon
+    plan: free
